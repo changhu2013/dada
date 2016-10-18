@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/changhu2013/dada#readme",
   "dependencies": {
+    "pi-gpio": "^0.0.8",
     "rpi-gpio": "^0.7.0"
   }
 }
