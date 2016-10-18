@@ -1,15 +1,9 @@
-var gpio = require('gpio');
+var gpio = require('rpi-gpio');
 
-var gpio4 = gpio.export(4, {
-    direction:'out',
-    interval :200,
-    ready : function(){
-        console.log('ok');
-    }
-});
+gpio.setup(7, gpio.DID_IN, readInput);
 
-console.log(gpio4);
-
-gpio4.set();
-
-console.log("hello world");
+function readInput(){
+    gpio.read(7, function(err, value){
+        console.log('The value is ' + value);
+    });
+}
